@@ -113,9 +113,10 @@ public class AirportRepository {
         // Otherwise return a "SUCCESS" message
         // and also cancel the ticket that passenger had booked earlier on the given flightId
         if(flightDB.get(flightId)==null) return "FAILURE";
-        if(passengerIdVsFlightIdsDb.get(flightId)==null) return "FAILURE";
-
         boolean foundflight =false;
+        if(passengerIdVsFlightIdsDb.get(passengerId)==null) return "FAILURE";
+
+
         for(Integer ele : passengerIdVsFlightIdsDb.get(flightId)){
             if(ele==flightId){
                 foundflight=true;
