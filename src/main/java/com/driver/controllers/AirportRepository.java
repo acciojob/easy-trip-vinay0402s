@@ -94,7 +94,7 @@ public class AirportRepository {
         ///if it matches return failure
         if(passengerIdVsFlightIdsDb.get(passengerId)!=null){
             for(int i : passengerIdVsFlightIdsDb.get(passengerId)){
-                if(i==passengerId)
+                if(i==flightId)
                     return  "FAILURE";
             }
         }
